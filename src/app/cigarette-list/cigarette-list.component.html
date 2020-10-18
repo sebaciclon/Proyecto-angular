@@ -1,20 +1,25 @@
 <table class="table">
     <thead>
-        <h3>LISTA DE CIGARRILOS DISPONIBLES</h3>
+        <h3>LISTA DE CIGARRILOS</h3>
         <tr>
-            <th><span class="inline">IMAGEN</span></th>
-            <th><span class="inline">CIGARRILLO</span></th>
-            <th><span class="inline">PRECIO</span></th>
-            <th><span class="inline">STOCK</span></th>
+            <th>IMAGEN</th>
+            <th>CIGARRILLO</th>
+            <th>PRECIO</th>
+            <th>STOCK</th>
+            <th>CANTIDAD</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor = "let cigarette of cigarettes" [ngClass] = "{'offer': cigarette.offer}">
-            <td><img [src]= "cigarette.image" [alt]= "cigarette.name"></td>
+            <td><img width = "100" class="img-thumbnail" [src]= "cigarette.image" [alt]= "cigarette.name"></td>
             <td>{{cigarette.name}}</td>
             <td>{{cigarette.price | currency}}</td>
             <td><span class="badge badge-danger" *ngIf = "cigarette.stock == 0">Sin Stock</span></td>
-            <td><span class="badge badge-info" *ngIf = "cigarette.offer == true">Oferta!</span></td>
+            <td>
+                <button class="badge badge-primary" (click) = downQuantity(cigarette)>-</button>
+                {{cigarette.quantity}}
+                <button class="badge badge-primary" (click) = upQuantity(cigarette)>+</button>
+            </td>
         </tr>
         
     </tbody>        

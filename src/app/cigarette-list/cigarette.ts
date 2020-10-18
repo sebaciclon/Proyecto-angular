@@ -4,4 +4,5 @@ export interface Cigarette {
     stock: number;
     image: string;
     offer: boolean;
+    quantity: number;
 }

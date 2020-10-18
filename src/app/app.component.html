@@ -19,10 +19,9 @@
 </nav>
 
 <div class="container">
-  <div class="row">
-    <div class="col-8"><app-cigarette-list></app-cigarette-list></div>
-    <div class="col-4">Carrito de Compras</div>
-  </div>
+  <router-outlet></router-outlet>
 </div>
 
-<footer>{{title}} 2020</footer>
+<footer class="text-center bg-dark">
+  <span class="text-light">{{title}} 2020</span>
+</footer>
