@@ -36,7 +36,7 @@ export class CigaretteListComponent implements OnInit {
     {
       "name": "Pier Mentolado",
       "price": 800,
-      "stock": 0,
+      "stock": 10,
       "image": "assets/img/pier mentolado.jpg",
       "offer": false,
       "quantity": 0,
@@ -111,15 +111,8 @@ export class CigaretteListComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
 
-  upQuantity(cigarette: Cigarette): void {
-    if(cigarette.quantity < cigarette.stock)
-      cigarette.quantity ++;
-  }
-
-  downQuantity(cigarette: Cigarette): void {
-    if(cigarette.quantity > 0)
-      cigarette.quantity --;
-  }
-
+  
+  
 }

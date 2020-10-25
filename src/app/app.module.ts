@@ -8,6 +8,7 @@ import { CigarettesComponent } from './cigarettes/cigarettes.component';
 import { CigaretteCartComponent } from './cigarette-cart/cigarette-cart.component';
 import { appRoutes } from './app-routes';
 import { RouterModule } from '@angular/router';
+import { InputIntegerComponent } from './input-integer/input-integer.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { RouterModule } from '@angular/router';
     CigaretteAboutComponent,
     CigarettesComponent,
     CigaretteCartComponent,
+    InputIntegerComponent,
     
   ],
   imports: [
