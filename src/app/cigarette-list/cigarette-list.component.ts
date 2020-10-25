@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CigaretteCartService } from '../cigarette-cart.service';
 import { Cigarette } from './cigarette';
 
 @Component({
@@ -106,13 +107,19 @@ export class CigaretteListComponent implements OnInit {
       "quantity": 0,
     }
   ];
-
-  constructor() { }
+  
+  constructor(private cart: CigaretteCartService) { 
+    
+  }
 
   ngOnInit(): void {
   }
   
-
+  addToCart(cigarette): void {
+    this.cart.addToCart(cigarette);
+    cigarette.stock -= cigarette.quantity;
+    cigarette.quantity = 0;
+  }
   
   
 }

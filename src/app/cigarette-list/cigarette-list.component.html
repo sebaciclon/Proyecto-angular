@@ -7,6 +7,7 @@
             <th>PRECIO</th>
             <th>STOCK</th>
             <th>CANTIDAD</th>
+            <th>COMPRA</th>
         </tr>
     </thead>
     <tbody>
@@ -18,14 +19,8 @@
             <td>
                 <app-input-integer [(quantity)] = "cigarette.quantity" [max] = "cigarette.stock" *ngIf = "cigarette.stock"></app-input-integer>
             </td>
-            
-            <!--<td>
-                <button class="badge badge-primary" (click) = downQuantity(cigarette)>-</button>
-                {{cigarette.quantity}}
-                <button class="badge badge-primary" (click) = upQuantity(cigarette)>+</button>
-            </td>-->
+            <td><button class="btn btn-primary" (click) = "addToCart(cigarette)">Comprar</button></td>
         </tr>
-        
     </tbody>        
 </table>
 
